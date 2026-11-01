@@ -17,8 +17,7 @@ git clone https://github.com/Byfer1124/byron-poo-audiovisual.git
 
 2. Abrir el proyecto en Eclipse
 1. Abre Eclipse IDE.
-   ![image alt](https://github.com/Byfer1124/byron-poo-
-   audiovisual/blob/c519874b0e4a15a22d532317d3ec7928e16ea76d/image.png)
+   ![](image.png)
 Selecciona File → Import.
 Busca la carpeta Git.
 Selecciona Projects from Git y presiona Next.
