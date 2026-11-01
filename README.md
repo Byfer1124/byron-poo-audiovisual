@@ -12,22 +12,22 @@ El sistema permite organizar la información mediante clases, aplicando concepto
 ![inicioeclips](img/1.png)
 
 2. Selecciona File → Import.
- ![fileimport](img/2.png)
+![fileimport](img/2.png)
 
 3. Busca la carpeta Git.
- ![filegit](img/3.png)
+![filegit](img/3.png)
 
 4. Selecciona Projects from Git y presiona Next.
- ![projectgit](img/4.png)
+![projectgit](img/4.png)
 
 5. Selecciona Clone URI y presiona Next.
 Pega la siguiente URL: https://github.com/Byfer1124/byron-poo-audiovisual.git
- ![cloneurl](img/6.png)
+![cloneurl](img/6.png)
 
 6. Presiona Next y selecciona la rama principal (main).
 Selecciona la ubicación donde deseas guardar el proyecto.
 Presiona Finish para completar la clonación.
- ![finish](img/7.png)
+![finish](img/7.png)
 
 Importa el proyecto y verifica que aparezca en Package Explorer.
 3. Ejecutar la aplicación
