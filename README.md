@@ -9,6 +9,7 @@ El sistema permite organizar la información mediante clases, aplicando concepto
 
 🚀 Instrucciones para clonar el proyecto desde eclipse:
 1. Abre Eclipse IDE.
+![inicioeclipse](img/1.png)
 
 2. Selecciona File → Import.
  
