@@ -17,11 +17,12 @@ El sistema permite organizar la información mediante clases, aplicando concepto
 3. Busca la carpeta Git.
  ![filegit](img/3.png)
 
-Selecciona Projects from Git y presiona Next.
-Selecciona Clone URI y presiona Next.
-Pega la siguiente URL:
+4. Selecciona Projects from Git y presiona Next.
+ ![projectgit](img/4.png)
 
-https://github.com/Byfer1124/byron-poo-audiovisual.git
+5. Selecciona Clone URI y presiona Next.
+Pega la siguiente URL: https://github.com/Byfer1124/byron-poo-audiovisual.git
+ ![cloneurl](img/5.png)
 
 Presiona Next y selecciona la rama principal (main).
 Selecciona la ubicación donde deseas guardar el proyecto.
