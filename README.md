@@ -22,7 +22,7 @@ El sistema permite organizar la información mediante clases, aplicando concepto
 
 5. Selecciona Clone URI y presiona Next.
 Pega la siguiente URL: https://github.com/Byfer1124/byron-poo-audiovisual.git
- ![cloneurl](img/5.png)
+ ![cloneurl](img/6.png)
 
 Presiona Next y selecciona la rama principal (main).
 Selecciona la ubicación donde deseas guardar el proyecto.
