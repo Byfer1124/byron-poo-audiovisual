@@ -24,9 +24,11 @@ El sistema permite organizar la información mediante clases, aplicando concepto
 Pega la siguiente URL: https://github.com/Byfer1124/byron-poo-audiovisual.git
  ![cloneurl](img/6.png)
 
-Presiona Next y selecciona la rama principal (main).
+6. Presiona Next y selecciona la rama principal (main).
 Selecciona la ubicación donde deseas guardar el proyecto.
 Presiona Finish para completar la clonación.
+ ![finish](img/7.png)
+
 Importa el proyecto y verifica que aparezca en Package Explorer.
 3. Ejecutar la aplicación
 En el explorador de proyectos de Eclipse, localiza la clase principal que contiene el método main.
@@ -37,25 +39,12 @@ La aplicación se ejecutará en la consola de Eclipse.
 
 El repositorio está organizado de la siguiente manera:
 
-text
 byron-poo-audiovisual/
-│
-├── src/
-│   ├── poo/
-│   │   └── Clase principal con el método main
-│   │
-│   └── uni1a/
-│       ├── Actor.java
-│       ├── Pelicula.java
-│       ├── Temporada.java
-│       ├── SerieDeTV.java
-│       ├── Documental.java
-│       ├── Investigador.java
-│       └── Otras clases del sistema
-│
-├── new_diagram.uxf
-│
-└── README.md
+├── img/                  # Carpeta que contiene las imágenes y diagramas del proyecto
+├── src/                  # Código fuente principal de la aplicación en Java
+│   ├── poo/              # Paquete con las clases principales y estructura base
+│   └── uni1a/            # Paquete con las clases específicas y subclases asociadas
+└── README.md             # Archivo de documentación del repositorio
 
 📐 Diagrama UML
 
