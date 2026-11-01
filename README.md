@@ -8,6 +8,7 @@ Su propósito principal es gestionar y modelar diferentes tipos de contenidos au
 El sistema permite organizar la información mediante clases, aplicando conceptos fundamentales de POO como abstracción, herencia, encapsulamiento, polimorfismo y relaciones entre clases.
 
 🚀 Instrucciones para clonar el proyecto desde eclipse:
+
 1. Abre Eclipse IDE.
 ![inicioeclips](img/1.png)
 
