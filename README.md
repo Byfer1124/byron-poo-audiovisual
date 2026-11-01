@@ -7,15 +7,7 @@ Su propósito principal es gestionar y modelar diferentes tipos de contenidos au
 
 El sistema permite organizar la información mediante clases, aplicando conceptos fundamentales de POO como abstracción, herencia, encapsulamiento, polimorfismo y relaciones entre clases.
 
-🚀 Instrucciones de instalación y uso
-1. Clonar el repositorio
-
-Clona el proyecto desde GitHub utilizando la siguiente URL:
-
-bash
-git clone https://github.com/Byfer1124/byron-poo-audiovisual.git
-
-2. Abrir el proyecto en Eclipse
+🚀 Instrucciones para clonar el proyecto desde eclipse:
 1. Abre Eclipse IDE.
    ![](image.png)
 2. Selecciona File → Import.
