@@ -9,9 +9,9 @@ El sistema permite organizar la información mediante clases, aplicando concepto
 
 🚀 Instrucciones para clonar el proyecto desde eclipse:
 1. Abre Eclipse IDE.
-   ![](image.png)
+
 2. Selecciona File → Import.
-    ![](1.png)
+ 
 Busca la carpeta Git.
 Selecciona Projects from Git y presiona Next.
 Selecciona Clone URI y presiona Next.
