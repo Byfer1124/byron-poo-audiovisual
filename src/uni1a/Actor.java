@@ -29,10 +29,16 @@ public class Actor {
     public void setNacionalidad(String nacionalidad) {
         this.nacionalidad = nacionalidad;
     }
-    
-    public void mostrarDetalles() {
+
+	public void mostrarDetalles() {
         System.out.println("Detalles del actor:");
         System.out.println("Nombre: " + this.nombre);
         System.out.println("Nacionalidad: " + this.nacionalidad);
     }
+	
+    
+    @Override
+	public String toString() {
+		return "Actor [nombre=" + nombre + ", nacionalidad=" + nacionalidad + "]";
+	}
 }
