@@ -13,6 +13,17 @@ public abstract class ContenidoAudiovisual {
         this.duracionEnMinutos = duracionEnMinutos;
         this.genero = genero;
     }
+    
+    public ContenidoAudiovisual(int id, String titulo, int duracionEnMinutos, String genero) {
+        this.id = id;
+        this.titulo = titulo;
+        this.duracionEnMinutos = duracionEnMinutos;
+        this.genero = genero;
+
+        if (id >= contar) {
+            contar = id + 1;
+        }
+    }
 
     // Getter y Setter para el campo 'titulo'
     public String getTitulo() {
