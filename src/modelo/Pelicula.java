@@ -40,7 +40,7 @@ public class Pelicula extends ContenidoAudiovisual {
         actores.add(actor);
     }
 
-    @Override
+   /* @Override
     public void mostrarDetalles() {
 
         System.out.println("Detalles de la película:");
@@ -56,7 +56,7 @@ public class Pelicula extends ContenidoAudiovisual {
 
         System.out.println();
         System.out.println("------------------------");
-    }
+    }*/
     
     //Método agregado para el Commit 4
     public void reproducirPelicula() {

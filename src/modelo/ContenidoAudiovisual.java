@@ -46,5 +46,5 @@ public abstract class ContenidoAudiovisual {
         return id;
     }
     
-    public abstract void mostrarDetalles();
+   /* public abstract void mostrarDetalles();*/
 }

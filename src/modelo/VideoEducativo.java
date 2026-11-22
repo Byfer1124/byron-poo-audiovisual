@@ -26,7 +26,7 @@ public class VideoEducativo extends ContenidoAudiovisual {
         this.nivelEducativo = nivelEducativo;
     }
 
-    @Override
+   /* @Override
     public void mostrarDetalles() {
         System.out.println("Detalles del Video Educativo:");
         System.out.println("ID: " + getId());
@@ -37,5 +37,5 @@ public class VideoEducativo extends ContenidoAudiovisual {
         System.out.println("Nivel educativo: " + nivelEducativo);
         System.out.println();
         System.out.println("------------------------");
-    }
+    }*/
 }

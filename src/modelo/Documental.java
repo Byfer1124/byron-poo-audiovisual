@@ -31,7 +31,7 @@ public class Documental extends ContenidoAudiovisual {
         return investigadorPrincipal;
     }
     
-	@Override
+	/*@Override
     public void mostrarDetalles() {
         System.out.println("Detalles del documental:");
         System.out.println("ID: " + getId());
@@ -50,5 +50,5 @@ public class Documental extends ContenidoAudiovisual {
         
         System.out.println("------------------------");
         System.out.println();
-    }
+    }*/
 }

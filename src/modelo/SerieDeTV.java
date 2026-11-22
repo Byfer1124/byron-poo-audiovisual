@@ -42,7 +42,7 @@ public class SerieDeTV extends ContenidoAudiovisual {
         detallesTemporadas.add(temporada);
     }
 
-    @Override
+    /*@Override
     public void mostrarDetalles() {
 
         System.out.println("Detalles de la serie:");
@@ -57,5 +57,5 @@ public class SerieDeTV extends ContenidoAudiovisual {
         detallesTemporadas.forEach(t -> t.mostrarDetalles());
         System.out.println();
         System.out.println("------------------------");
-    }
+    }*/
 }

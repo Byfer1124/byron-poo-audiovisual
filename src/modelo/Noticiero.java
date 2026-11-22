@@ -26,7 +26,7 @@ public class Noticiero extends ContenidoAudiovisual {
         this.cadenaTv = cadenaTv;
     }
 
-    @Override
+    /*@Override
     public void mostrarDetalles() {
         System.out.println("Detalles del Noticiero:");
         System.out.println("ID: " + getId());
@@ -37,5 +37,5 @@ public class Noticiero extends ContenidoAudiovisual {
         System.out.println("Cadena de TV: " + cadenaTv);
         System.out.println();
         System.out.println("------------------------");
-    }
+    }*/
 }

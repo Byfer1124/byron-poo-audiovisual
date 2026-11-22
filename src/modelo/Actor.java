@@ -30,11 +30,11 @@ public class Actor {
         this.nacionalidad = nacionalidad;
     }
 
-	public void mostrarDetalles() {
+	/*public void mostrarDetalles() {
         System.out.println("Detalles del actor:");
         System.out.println("Nombre: " + this.nombre);
         System.out.println("Nacionalidad: " + this.nacionalidad);
-    }
+    }*/
 	
     
     @Override

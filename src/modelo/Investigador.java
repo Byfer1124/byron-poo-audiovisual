@@ -31,9 +31,9 @@ public class Investigador {
         this.especialidad = especialidad;
     }
     
-    public void mostrarDetalles() {
+    /*public void mostrarDetalles() {
         System.out.println("Detalles de Investigador:");
         System.out.println("Nombre: " + this.nombre);
         System.out.println("Especialidad: " + this. especialidad);
-    }
+    }*/
 }
