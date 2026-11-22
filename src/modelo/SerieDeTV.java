@@ -29,6 +29,10 @@ public class SerieDeTV extends ContenidoAudiovisual {
     public void setTemporadas(int temporadas) {
         this.temporadas = temporadas;
     }
+    
+    public List<Temporada> getDetallesTemporadas() {
+        return detallesTemporadas;
+    }
 
     // Crear y agregar una temporada
     public void agregarTemporada(int anioEstreno,int cantidadEpisodios) {

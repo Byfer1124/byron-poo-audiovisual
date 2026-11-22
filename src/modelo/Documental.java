@@ -27,6 +27,10 @@ public class Documental extends ContenidoAudiovisual {
         this.tema = tema;
     }
  
+    public Investigador getInvestigadorPrincipal() {
+        return investigadorPrincipal;
+    }
+    
 	@Override
     public void mostrarDetalles() {
         System.out.println("Detalles del documental:");
