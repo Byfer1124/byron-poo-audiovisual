@@ -59,9 +59,13 @@ public class Pelicula extends ContenidoAudiovisual {
     }*/
     
     //Método agregado para el Commit 4
-    public void reproducirPelicula() {
+   /* public void reproducirPelicula() {
         System.out.println("Reproduciendo la película en alta definición");
         
+    }*/
+    
+    public String reproducirPelicula() {
+        return "Reproduciendo la película en alta definición";
     }
 }
 

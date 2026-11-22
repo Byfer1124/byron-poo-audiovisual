@@ -12,6 +12,8 @@ import modelo.VideoEducativo;
 
 import vista.ContenidoAudiovisualVista;
 
+import controlador.ContenidoAudiovisualControlador;
+
 public class PruebaAudioVisual {
 	public static void main(String[] args) {
 		System.out.println("Hello from Eclipse!");
@@ -73,15 +75,21 @@ public class PruebaAudioVisual {
 	    contenidos[4] = videoEducativo;
 		// -------------------------------------------------------------------------
 		
-	    ContenidoAudiovisualVista vista = new ContenidoAudiovisualVista();
+	    //ContenidoAudiovisualVista vista = new ContenidoAudiovisualVista();
 				
 	   // Mostrar los detalles de cada contenido audiovisual
 		//for (ContenidoAudiovisual contenido : contenidos) {
 			//contenido.mostrarDetalles();
 		//}
 	    
-	    for (ContenidoAudiovisual contenido : contenidos) {
+	    /*for (ContenidoAudiovisual contenido : contenidos) {
 	        vista.mostrarDetalles(contenido);
-	    }
+	    }*/
+	    ContenidoAudiovisualVista vista = new ContenidoAudiovisualVista();
+
+	    ContenidoAudiovisualControlador controlador =
+	            new ContenidoAudiovisualControlador(vista);
+
+	    controlador.mostrarContenidos(contenidos);
 	}
 }
