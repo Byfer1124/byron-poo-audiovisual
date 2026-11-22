@@ -33,9 +33,13 @@ Durante su desarrollo se aplicaron conceptos de programación orientada a objeto
 
 🛠️**Tecnologías utilizadas:**
 • Java 21.
+
 • Eclipse IDE.
+
 • JUnit 5 (JUnit Jupiter).
+
 • Archivos CSV para el almacenamiento de información.
+
 • Git y GitHub para el control de versiones.
 
 ---
@@ -87,8 +91,11 @@ byron-poo-audiovisual/
 El proyecto utiliza el patrón Modelo-Vista-Controlador (MVC):
  
 • Modelo: contiene las clases que representan los contenidos audiovisuales y sus elementos relacionados.
+
 • Vista: presenta el menú de consola, recibe los datos del usuario y muestra la información.
+
 • Controlador: coordina las operaciones del sistema, recibe las opciones del usuario y se comunica con el modelo y la persistencia.
+
 • Persistencia: contiene las clases responsables de leer y guardar los datos en archivos CSV.
 
 ---
@@ -141,10 +148,15 @@ El proyecto utiliza JUnit 5 para verificar el funcionamiento de las clases princ
 
 Se desarrollaron 22 pruebas unitarias que abarcan:
 • Clases del modelo.
+
 • Lectura y escritura de archivos.
+
 • Gestión de actores, investigadores y temporadas.
+
 • Relaciones entre películas y actores.
+
 • Integración del proceso de guardado.
+
 Para ejecutar las pruebas en Eclipse, se debe seleccionar la carpeta test o las clases de prueba y utilizar la opción **Run As → JUnit Test**..
 
 ---
