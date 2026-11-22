@@ -205,7 +205,7 @@ public class PruebaAudioVisual {
          */
         // ==================================================
         
-        archivo.asignarActores(contenidosLeidos);
+        /*archivo.asignarActores(contenidosLeidos);*/ //E
 
         // ==================================================
         // COMPROBAR ACTORES ASIGNADOS A LAS PELÍCULAS
@@ -237,7 +237,7 @@ public class PruebaAudioVisual {
      // ASIGNAR TEMPORADAS A LAS SERIES LEÍDAS
      // ==================================================
 
-     archivo.asignarTemporadas(contenidosLeidos);
+     /*archivo.asignarTemporadas(contenidosLeidos);*/ //E
 
      // ==================================================
      // COMPROBAR TEMPORADAS ASIGNADAS
