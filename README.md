@@ -73,7 +73,10 @@ byron-poo-audiovisual/
 │   │   ├── ContenidoAudiovisualVista.java
 │   │   └── VistaContenido.java
 │   └── poo/
-│       └── PruebaAudioVisual.java
+│   |  └── PruebaAudioVisual.java
+|   |
+|   |__nuevodiagrama.uxf
+|
 ├── test/
 │   └── pruebas/
 ├── datos/
@@ -82,7 +85,9 @@ byron-poo-audiovisual/
 │   ├── pelicula_actores.csv
 │   ├── temporadas.csv
 │   └── investigadores.csv
+|
 └── README.md
+
 
 ```
 ---
@@ -163,7 +168,7 @@ Para ejecutar las pruebas en Eclipse, se debe seleccionar la carpeta test o las 
 
 📐 **Diagrama de clases**
 
-El proyecto incluye el archivo new_diagram.uxf, que contiene el diagrama UML de clases elaborado con UMLet.
+El proyecto incluye el archivo nuevo_diagram.uxf, que contiene el diagrama UML de clases actualizado.
 
 Este diagrama representa la estructura del sistema, incluyendo la herencia y las relaciones de asociación, agregación y composición entre las clases.
 
