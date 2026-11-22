@@ -171,6 +171,7 @@ Para ejecutar las pruebas en Eclipse, se debe seleccionar la carpeta test o las 
 El proyecto incluye el archivo nuevo_diagram.uxf, que contiene el diagrama UML de clases actualizado.
 
 Este diagrama representa la estructura del sistema, incluyendo la herencia y las relaciones de asociación, agregación y composición entre las clases.
+
 ![diagramaclases](https://github.com/Byfer1124/byron-poo-audiovisual/blob/5c42e43a3aee598803c86b18ed311cab5f13028b/img/DiagramaUMLProyectoAudioVisualPOO.png)
 ---
 **Autor**
