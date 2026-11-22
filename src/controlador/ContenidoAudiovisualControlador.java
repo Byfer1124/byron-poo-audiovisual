@@ -1,13 +1,14 @@
+
 package controlador;
 
 import modelo.ContenidoAudiovisual;
-import vista.ContenidoAudiovisualVista;
+import vista.VistaContenido;
 
 public class ContenidoAudiovisualControlador {
 
-    private ContenidoAudiovisualVista vista;
+    private VistaContenido vista;
 
-    public ContenidoAudiovisualControlador(ContenidoAudiovisualVista vista) {
+    public ContenidoAudiovisualControlador(VistaContenido vista) {
         this.vista = vista;
     }
 

@@ -260,5 +260,13 @@ public class PruebaAudioVisual {
              }
          }
      }
-    }
+     
+     // ==================================================
+     // GUARDAR INFORMACIÓN EN LOS ARCHIVOS CSV
+     // ==================================================
+
+     System.out.println("\nGUARDANDO INFORMACION EN LOS ARCHIVOS CSV:");
+
+     archivo.guardarTodo(contenidosLeidos);
+  }
 }
