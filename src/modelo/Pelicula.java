@@ -15,6 +15,7 @@ public class Pelicula extends ContenidoAudiovisual {
     // Agregación: Una película tiene actores.
     private List<Actor> actores;
 
+    //Sin ID: Java lo genera automáticamente
     public Pelicula(String titulo, int duracionEnMinutos, String genero, String estudio) {
 
         super(titulo, duracionEnMinutos, genero);
@@ -23,6 +24,13 @@ public class Pelicula extends ContenidoAudiovisual {
         this.actores = new ArrayList<>();
     }
 
+    //Con ID: Java conserva el identificador recuperado del CSV.
+    public Pelicula(int id, String titulo, int duracionEnMinutos, String genero, String estudio) {
+        super(id, titulo, duracionEnMinutos, genero);
+        this.estudio = estudio;
+        this.actores = new ArrayList<>();
+    }
+    
     public String getEstudio() {
         return estudio;
     }

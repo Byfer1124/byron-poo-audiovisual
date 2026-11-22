@@ -14,6 +14,10 @@ import vista.ContenidoAudiovisualVista;
 
 import controlador.ContenidoAudiovisualControlador;
 
+import persistencia.ContenidoArchivo;
+import java.util.List;
+
+
 public class PruebaAudioVisual {
 	public static void main(String[] args) {
 		System.out.println("Hello from Eclipse!");
@@ -91,5 +95,21 @@ public class PruebaAudioVisual {
 	            new ContenidoAudiovisualControlador(vista);
 
 	    controlador.mostrarContenidos(contenidos);
+	    
+	    
+	    //*******************************
+	    ContenidoArchivo archivo = new ContenidoArchivo("datos/contenidos.csv");
+
+	    List<ContenidoAudiovisual> contenidosLeidos = archivo.leerContenidos();
+
+	    System.out.println("\nCONTENIDOS LEÍDOS DESDE EL CSV:");
+
+	    for (ContenidoAudiovisual contenido : contenidosLeidos) {
+	        System.out.println(
+	            contenido.getId() + " - " +
+	            contenido.getTitulo() + " - " +
+	            contenido.getClass().getSimpleName()
+	        );
+	    }
 	}
 }

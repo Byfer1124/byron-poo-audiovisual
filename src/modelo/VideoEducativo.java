@@ -10,6 +10,12 @@ public class VideoEducativo extends ContenidoAudiovisual {
         this.nivelEducativo = nivelEducativo;
     }
 
+    public VideoEducativo(int id, String titulo, int duracionEnMinutos, String genero,String materia, String nivelEducativo) {
+    	super(id, titulo, duracionEnMinutos, genero);this.materia = materia;
+    	this.nivelEducativo = nivelEducativo;
+     }
+    
+    
     public String getMateria() {
         return materia;
     }

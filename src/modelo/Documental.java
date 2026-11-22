@@ -19,6 +19,14 @@ public class Documental extends ContenidoAudiovisual {
         this.investigadorPrincipal = investigadorPrincipal;
     }
 
+    public Documental(int id, String titulo, int duracionEnMinutos, String genero,
+            String tema, Investigador investigadorPrincipal) {
+    	super(id, titulo, duracionEnMinutos, genero);
+    	this.tema = tema;
+    	this.investigadorPrincipal = investigadorPrincipal;
+    	
+     }
+    
     public String getTema() {
         return tema;
     }

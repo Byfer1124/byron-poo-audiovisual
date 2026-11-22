@@ -9,6 +9,13 @@ public class Noticiero extends ContenidoAudiovisual {
         this.presentador = presentador;
         this.cadenaTv = cadenaTv;
     }
+    
+    public Noticiero(int id, String titulo, int duracionEnMinutos, String genero,
+            String presentador, String cadenaTv) {
+    	super(id, titulo, duracionEnMinutos, genero);
+    	this.presentador = presentador;
+    	this.cadenaTv = cadenaTv;
+     }
 
     public String getPresentador() {
         return presentador;

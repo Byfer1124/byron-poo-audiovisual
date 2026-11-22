@@ -22,6 +22,12 @@ public class SerieDeTV extends ContenidoAudiovisual {
         this.detallesTemporadas = new ArrayList<>();
     }
 
+    public SerieDeTV(int id, String titulo, int duracionEnMinutos, String genero, int temporadas) {
+        super(id, titulo, duracionEnMinutos, genero);
+        this.temporadas = temporadas;
+        this.detallesTemporadas = new ArrayList<>();
+    }
+    
     public int getTemporadas() {
         return temporadas;
     }
