@@ -16,6 +16,7 @@ import persistencia.ContenidoArchivo;
 
 import java.util.List;
 import java.util.Map;
+import modelo.Temporada;
 
 public class PruebaAudioVisual {
 
@@ -231,5 +232,33 @@ public class PruebaAudioVisual {
                 }
             }
         }
+        
+     // ==================================================
+     // ASIGNAR TEMPORADAS A LAS SERIES LEÍDAS
+     // ==================================================
+
+     archivo.asignarTemporadas(contenidosLeidos);
+
+     // ==================================================
+     // COMPROBAR TEMPORADAS ASIGNADAS
+     // ==================================================
+
+     System.out.println("\nCOMPROBACIÓN DE TEMPORADAS ASIGNADAS:");
+
+     for (ContenidoAudiovisual contenido : contenidosLeidos) {
+
+         if (contenido instanceof SerieDeTV serieLeida) {
+
+             System.out.println("\nSerie: " + serieLeida.getTitulo());
+
+             for (Temporada temporada : serieLeida.getDetallesTemporadas()) {
+
+                 System.out.println(
+                     "- Año de estreno: " + temporada.getAnioEstreno()
+                     + " | Episodios: " + temporada.getCantidadEpisodios()
+                 );
+             }
+         }
+     }
     }
 }
