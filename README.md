@@ -12,13 +12,21 @@ Durante su desarrollo se aplicaron conceptos de programación orientada a objeto
 **Funcionalidades principales:**
 
 • Registrar películas, incluyendo su estudio cinematográfico y actores.
+
 • Registrar series de televisión y sus temporadas.
+
 • Registrar documentales y sus investigadores.
+
 • Registrar noticieros con su presentador y cadena de televisión.
+
 • Registrar videos educativos con su materia y nivel educativo.
+
 • Consultar los contenidos registrados.
+
 • Leer información desde archivos CSV.
+
 • Guardar los contenidos y sus relaciones en archivos CSV.
+
 • Gestionar la información mediante un menú de consola.
 
 ---
