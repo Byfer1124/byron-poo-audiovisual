@@ -73,7 +73,10 @@ byron-poo-audiovisual/
 │   │   ├── ContenidoAudiovisualVista.java
 │   │   └── VistaContenido.java
 │   └── poo/
-│       └── PruebaAudioVisual.java
+│   |  └── PruebaAudioVisual.java
+|   |
+|   |__nuevodiagrama.uxf
+|
 ├── test/
 │   └── pruebas/
 ├── datos/
@@ -82,7 +85,9 @@ byron-poo-audiovisual/
 │   ├── pelicula_actores.csv
 │   ├── temporadas.csv
 │   └── investigadores.csv
+|
 └── README.md
+
 
 ```
 ---
