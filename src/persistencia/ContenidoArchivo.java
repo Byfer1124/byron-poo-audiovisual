@@ -23,264 +23,296 @@ import modelo.Actor;
 
 public class ContenidoArchivo {
 
-	private String rutaArchivo;
-	private ActorArchivo actorArchivo;
-	private InvestigadorArchivo investigadorArchivo;
-	private TemporadaArchivo temporadaArchivo;
-	private RelacionPeliculaActorArchivo relacionArchivo;
+    private String rutaArchivo;
+    private ActorArchivo actorArchivo;
+    private InvestigadorArchivo investigadorArchivo;
+    private TemporadaArchivo temporadaArchivo;
+    private RelacionPeliculaActorArchivo relacionArchivo;
 
-	public ContenidoArchivo(String rutaArchivo) {
+    public ContenidoArchivo(String rutaArchivo) {
 
-		this.rutaArchivo = rutaArchivo;
+        this.rutaArchivo = rutaArchivo;
 
-		this.actorArchivo = new ActorArchivo("datos/actores.csv");
+        this.actorArchivo = new ActorArchivo("datos/actores.csv");
 
-		this.investigadorArchivo = new InvestigadorArchivo("datos/investigadores.csv");
+        this.investigadorArchivo = new InvestigadorArchivo("datos/investigadores.csv");
 
-		this.temporadaArchivo = new TemporadaArchivo("datos/temporadas.csv");
+        this.temporadaArchivo = new TemporadaArchivo("datos/temporadas.csv");
 
-		this.relacionArchivo = new RelacionPeliculaActorArchivo("datos/pelicula_actores.csv", "datos/actores.csv");
-	}
+        this.relacionArchivo = new RelacionPeliculaActorArchivo(
+                "datos/pelicula_actores.csv", "datos/actores.csv");
+    }
 
-	public ContenidoArchivo(String rutaArchivo, String rutaActores, String rutaInvestigadores, String rutaTemporadas,
-			String rutaRelaciones) {
+    public ContenidoArchivo(String rutaArchivo, String rutaActores,
+            String rutaInvestigadores, String rutaTemporadas,
+            String rutaRelaciones) {
 
-		this.rutaArchivo = rutaArchivo;
+        this.rutaArchivo = rutaArchivo;
 
-		this.actorArchivo = new ActorArchivo(rutaActores);
+        this.actorArchivo = new ActorArchivo(rutaActores);
 
-		this.investigadorArchivo = new InvestigadorArchivo(rutaInvestigadores);
+        this.investigadorArchivo = new InvestigadorArchivo(rutaInvestigadores);
 
-		this.temporadaArchivo = new TemporadaArchivo(rutaTemporadas);
+        this.temporadaArchivo = new TemporadaArchivo(rutaTemporadas);
 
-		this.relacionArchivo = new RelacionPeliculaActorArchivo(rutaRelaciones, rutaActores);
-	}
+        this.relacionArchivo = new RelacionPeliculaActorArchivo(
+                rutaRelaciones, rutaActores);
+    }
 
-	public List<ContenidoAudiovisual> leerContenidos() {
+    public List<ContenidoAudiovisual> leerContenidos() {
 
-		List<ContenidoAudiovisual> contenidos = new ArrayList<>();
+        List<ContenidoAudiovisual> contenidos = new ArrayList<>();
 
-		Map<Integer, Investigador> investigadores = investigadorArchivo.leerInvestigadores();
+        Map<Integer, Investigador> investigadores =
+                investigadorArchivo.leerInvestigadores();
 
-		try (BufferedReader br = new BufferedReader(new FileReader(rutaArchivo))) {
+        try (BufferedReader br = new BufferedReader(new FileReader(rutaArchivo))) {
 
-			String linea;
-			boolean primeraLinea = true;
+            String linea;
+            boolean primeraLinea = true;
 
-			while ((linea = br.readLine()) != null) {
+            while ((linea = br.readLine()) != null) {
 
-				if (primeraLinea) {
-					primeraLinea = false;
-					continue;
-				}
+                if (primeraLinea) {
+                    primeraLinea = false;
+                    continue;
+                }
 
-				if (linea.trim().isEmpty()) {
-					continue;
-				}
+                if (linea.trim().isEmpty()) {
+                    continue;
+                }
 
-				String[] datos = linea.split(",", -1);
+                String[] datos = linea.split(",", -1);
 
-				int id = Integer.parseInt(datos[0]);
-				String tipo = datos[1];
-				String titulo = datos[2];
-				int duracion = Integer.parseInt(datos[3]);
-				String genero = datos[4];
+                int id = Integer.parseInt(datos[0]);
+                String tipo = datos[1];
+                String titulo = datos[2];
+                int duracion = Integer.parseInt(datos[3]);
+                String genero = datos[4];
 
-				ContenidoAudiovisual contenido = null;
+                ContenidoAudiovisual contenido = null;
 
-				switch (tipo) {
+                switch (tipo) {
 
-				case "Pelicula":
-					contenido = new Pelicula(id, titulo, duracion, genero, datos[5]);
-					break;
+                    case "Pelicula":
+                        contenido = new Pelicula(id, titulo, duracion, genero, datos[5]);
+                        break;
 
-				case "SerieDeTV":
-					contenido = new SerieDeTV(id, titulo, duracion, genero, Integer.parseInt(datos[11]));
-					break;
+                    case "SerieDeTV":
+                        contenido = new SerieDeTV(
+                                id, titulo, duracion, genero,
+                                Integer.parseInt(datos[11]));
+                        break;
 
-				case "Documental":
-					contenido = new Documental(id, titulo, duracion, genero, datos[6], investigadores.get(id));
-					break;
+                    case "Documental":
+                        contenido = new Documental(
+                                id, titulo, duracion, genero,
+                                datos[6], investigadores.get(id));
+                        break;
 
-				case "Noticiero":
-					contenido = new Noticiero(id, titulo, duracion, genero, datos[7], datos[8]);
-					break;
+                    case "Noticiero":
+                        contenido = new Noticiero(
+                                id, titulo, duracion, genero,
+                                datos[7], datos[8]);
+                        break;
 
-				case "VideoEducativo":
-					contenido = new VideoEducativo(id, titulo, duracion, genero, datos[9], datos[10]);
-					break;
+                    case "VideoEducativo":
+                        contenido = new VideoEducativo(
+                                id, titulo, duracion, genero,
+                                datos[9], datos[10]);
+                        break;
 
-				default:
-					System.out.println("Tipo de contenido desconocido: " + tipo);
-					break;
-				}
+                    default:
+                        System.out.println(
+                                "Tipo de contenido desconocido: " + tipo);
+                        break;
+                }
+
+                if (contenido != null) {
+                    contenidos.add(contenido);
+                }
+            }
+
+        } catch (IOException e) {
+            System.out.println("Error al leer contenidos: " + e.getMessage());
+        }
+
+        // Asignar automáticamente las relaciones de los contenidos.
+        relacionArchivo.asignarActores(contenidos);
+        temporadaArchivo.asignarTemporadas(contenidos);
+
+        return contenidos;
+    }
 
-				if (contenido != null) {
-					contenidos.add(contenido);
-				}
-			}
+    public void guardarContenidos(List<ContenidoAudiovisual> contenidos) {
+
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(rutaArchivo))) {
+
+            bw.write("id,tipo,titulo,duracion,genero,estudio,tema,"
+                    + "presentador,cadenaTv,materia,nivelEducativo,temporadas");
+            bw.newLine();
+
+            for (ContenidoAudiovisual contenido : contenidos) {
+
+                String tipo = contenido.getClass().getSimpleName();
+
+                String estudio = "";
+                String tema = "";
+                String presentador = "";
+                String cadenaTv = "";
+                String materia = "";
+                String nivelEducativo = "";
+                String temporadas = "";
+
+                if (contenido instanceof Pelicula) {
+                    Pelicula pelicula = (Pelicula) contenido;
+                    estudio = pelicula.getEstudio();
+                }
+
+                if (contenido instanceof SerieDeTV) {
+                    SerieDeTV serie = (SerieDeTV) contenido;
+                    temporadas = String.valueOf(serie.getTemporadas());
+                }
 
-		} catch (IOException e) {
-			System.out.println("Error al leer contenidos: " + e.getMessage());
-		}
+                if (contenido instanceof Documental) {
+                    Documental documental = (Documental) contenido;
+                    tema = documental.getTema();
+                }
 
-		// Asignar automáticamente las relaciones de los contenidos.
-		relacionArchivo.asignarActores(contenidos);
-		temporadaArchivo.asignarTemporadas(contenidos);
+                if (contenido instanceof Noticiero) {
+                    Noticiero noticiero = (Noticiero) contenido;
+                    presentador = noticiero.getPresentador();
+                    cadenaTv = noticiero.getCadenaTv();
+                }
 
-		return contenidos;
-	}
+                if (contenido instanceof VideoEducativo) {
+                    VideoEducativo video = (VideoEducativo) contenido;
+                    materia = video.getMateria();
+                    nivelEducativo = video.getNivelEducativo();
+                }
 
-	public void guardarContenidos(List<ContenidoAudiovisual> contenidos) {
+                String[] datos = {
+                    String.valueOf(contenido.getId()),
+                    tipo,
+                    contenido.getTitulo(),
+                    String.valueOf(contenido.getDuracionEnMinutos()),
+                    contenido.getGenero(),
+                    estudio,
+                    tema,
+                    presentador,
+                    cadenaTv,
+                    materia,
+                    nivelEducativo,
+                    temporadas
+                };
 
-		try (BufferedWriter bw = new BufferedWriter(new FileWriter(rutaArchivo))) {
+                bw.write(convertirNulos(datos));
+                bw.newLine();
+            }
 
-			bw.write("id,tipo,titulo,duracion,genero,estudio,tema,"
-					+ "presentador,cadenaTv,materia,nivelEducativo,temporadas");
-			bw.newLine();
+            System.out.println("Contenidos guardados correctamente.");
 
-			for (ContenidoAudiovisual contenido : contenidos) {
+        } catch (IOException e) {
+            System.out.println("Error al guardar contenidos: " + e.getMessage());
+        }
+    }
 
-				String tipo = contenido.getClass().getSimpleName();
+    public Map<Integer, Investigador> leerInvestigadores() {
+        return investigadorArchivo.leerInvestigadores();
+    }
 
-				String estudio = "";
-				String tema = "";
-				String presentador = "";
-				String cadenaTv = "";
-				String materia = "";
-				String nivelEducativo = "";
-				String temporadas = "";
+    public Map<Integer, Actor> leerActores() {
+        return actorArchivo.leerActores();
+    }
 
-				if (contenido instanceof Pelicula pelicula) {
-					estudio = pelicula.getEstudio();
-				}
+    public void guardarActores(List<ContenidoAudiovisual> contenidos) {
 
-				if (contenido instanceof SerieDeTV serie) {
-					temporadas = String.valueOf(serie.getTemporadas());
-				}
+        Map<Actor, Integer> ids = new IdentityHashMap<>();
+        Map<Integer, Actor> actores = new LinkedHashMap<>();
 
-				if (contenido instanceof Documental documental) {
-					tema = documental.getTema();
-				}
+        int id = 0;
 
-				if (contenido instanceof Noticiero noticiero) {
-					presentador = noticiero.getPresentador();
-					cadenaTv = noticiero.getCadenaTv();
-				}
+        for (ContenidoAudiovisual contenido : contenidos) {
 
-				if (contenido instanceof VideoEducativo video) {
-					materia = video.getMateria();
-					nivelEducativo = video.getNivelEducativo();
-				}
+            if (contenido instanceof Pelicula) {
 
-				String[] datos = { String.valueOf(contenido.getId()), tipo, contenido.getTitulo(),
-						String.valueOf(contenido.getDuracionEnMinutos()), contenido.getGenero(), estudio, tema,
-						presentador, cadenaTv, materia, nivelEducativo, temporadas };
+                Pelicula pelicula = (Pelicula) contenido;
 
-				bw.write(convertirNulos(datos));
-				bw.newLine();
-			}
+                for (Actor actor : pelicula.getActores()) {
 
-			System.out.println("Contenidos guardados correctamente.");
+                    if (actor != null && !ids.containsKey(actor)) {
 
-		} catch (IOException e) {
-			System.out.println("Error al guardar contenidos: " + e.getMessage());
-		}
-	}
+                        ids.put(actor, id);
+                        actores.put(id, actor);
+                        id++;
+                    }
+                }
+            }
+        }
 
-	public Map<Integer, Investigador> leerInvestigadores() {
-		return investigadorArchivo.leerInvestigadores();
-	}
+        actorArchivo.guardarActores(actores);
+    }
 
-	public Map<Integer, Actor> leerActores() {
-		return actorArchivo.leerActores();
-	}
+    public void asignarActores(List<ContenidoAudiovisual> contenidos) {
+        relacionArchivo.asignarActores(contenidos);
+    }
 
-	public void guardarActores(List<ContenidoAudiovisual> contenidos) {
+    public void asignarTemporadas(List<ContenidoAudiovisual> contenidos) {
+        temporadaArchivo.asignarTemporadas(contenidos);
+    }
 
-		Map<Actor, Integer> ids = new IdentityHashMap<>();
-		Map<Integer, Actor> actores = new LinkedHashMap<>();
+    public void guardarRelacionesPeliculaActores(
+            List<ContenidoAudiovisual> contenidos) {
 
-		int id = 0;
+        relacionArchivo.guardarRelacionesPeliculaActores(contenidos);
+    }
 
-		for (ContenidoAudiovisual contenido : contenidos) {
+    public void guardarTemporadas(List<ContenidoAudiovisual> contenidos) {
+        temporadaArchivo.guardarTemporadas(contenidos);
+    }
 
-			if (contenido instanceof Pelicula pelicula) {
+    public void guardarInvestigadores(List<ContenidoAudiovisual> contenidos) {
 
-				for (Actor actor : pelicula.getActores()) {
+        Map<Integer, Investigador> investigadores = new LinkedHashMap<>();
 
-					if (actor != null && !ids.containsKey(actor)) {
+        for (ContenidoAudiovisual contenido : contenidos) {
 
-						ids.put(actor, id);
-						actores.put(id, actor);
-						id++;
-					}
-				}
-			}
-		}
+            if (contenido instanceof Documental) {
 
-		actorArchivo.guardarActores(actores);
-	}
+                Documental documental = (Documental) contenido;
 
-	public void asignarActores(List<ContenidoAudiovisual> contenidos) {
+                Investigador investigador =
+                        documental.getInvestigadorPrincipal();
 
-		relacionArchivo.asignarActores(contenidos);
-	}
+                if (investigador != null) {
+                    investigadores.put(documental.getId(), investigador);
+                }
+            }
+        }
 
-	public void asignarTemporadas(List<ContenidoAudiovisual> contenidos) {
+        investigadorArchivo.guardarInvestigadores(investigadores);
+    }
 
-		temporadaArchivo.asignarTemporadas(contenidos);
-	}
+    public void guardarTodo(List<ContenidoAudiovisual> contenidos) {
 
-	public void guardarRelacionesPeliculaActores(List<ContenidoAudiovisual> contenidos) {
+        guardarContenidos(contenidos);
+        guardarActores(contenidos);
+        guardarRelacionesPeliculaActores(contenidos);
+        guardarTemporadas(contenidos);
+        guardarInvestigadores(contenidos);
 
-		relacionArchivo.guardarRelacionesPeliculaActores(contenidos);
-	}
+        System.out.println("Proceso de guardado finalizado.");
+    }
 
-	public void guardarTemporadas(List<ContenidoAudiovisual> contenidos) {
+    private String convertirNulos(String[] datos) {
 
-		temporadaArchivo.guardarTemporadas(contenidos);
-	}
+        for (int i = 0; i < datos.length; i++) {
 
-	public void guardarInvestigadores(List<ContenidoAudiovisual> contenidos) {
+            if (datos[i] == null) {
+                datos[i] = "";
+            }
+        }
 
-		Map<Integer, Investigador> investigadores = new LinkedHashMap<>();
-
-		for (ContenidoAudiovisual contenido : contenidos) {
-
-			if (contenido instanceof Documental documental) {
-
-				Investigador investigador = documental.getInvestigadorPrincipal();
-
-				if (investigador != null) {
-					investigadores.put(documental.getId(), investigador);
-				}
-			}
-		}
-
-		investigadorArchivo.guardarInvestigadores(investigadores);
-	}
-
-	public void guardarTodo(List<ContenidoAudiovisual> contenidos) {
-
-		guardarContenidos(contenidos);
-		guardarActores(contenidos);
-		guardarRelacionesPeliculaActores(contenidos);
-		guardarTemporadas(contenidos);
-		guardarInvestigadores(contenidos);
-
-		System.out.println("Proceso de guardado finalizado.");
-	}
-
-	private String convertirNulos(String[] datos) {
-
-		for (int i = 0; i < datos.length; i++) {
-
-			if (datos[i] == null) {
-				datos[i] = "";
-			}
-		}
-
-		return String.join(",", datos);
-	}
+        return String.join(",", datos);
+    }
 }

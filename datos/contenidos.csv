@@ -5,3 +5,4 @@ id,tipo,titulo,duracion,genero,estudio,tema,presentador,cadenaTv,materia,nivelEd
 3,Noticiero,Noticias Estelar,30,Informativo,,,Carlos Perez,Estelar TV,,,
 4,VideoEducativo,Estructuras de Datos en Java,40,Educativo,,,,,Programacion,Universitario,
 5,Documental,El universo,60,Ciencia,,Astronomía,,,,,
+6,Noticiero,La politica ecuatoriana,25,Informativo,,,Julio Cesta,OromarTv,,,

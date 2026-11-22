@@ -28,12 +28,15 @@ public class RelacionPeliculaActorArchivo {
     // Lee las relaciones y asigna los actores a sus respectivas películas.
     public void asignarActores(List<ContenidoAudiovisual> contenidos) {
 
-        Map<Integer, Actor> actores = new ActorArchivo(rutaActores).leerActores();
+        Map<Integer, Actor> actores =
+                new ActorArchivo(rutaActores).leerActores();
+
         Map<Integer, Pelicula> peliculas = new HashMap<>();
 
         for (ContenidoAudiovisual contenido : contenidos) {
 
-            if (contenido instanceof Pelicula pelicula) {
+            if (contenido instanceof Pelicula) {
+                Pelicula pelicula = (Pelicula) contenido;
                 peliculas.put(pelicula.getId(), pelicula);
             }
         }
@@ -87,7 +90,9 @@ public class RelacionPeliculaActorArchivo {
 
             for (ContenidoAudiovisual contenido : contenidos) {
 
-                if (contenido instanceof Pelicula pelicula) {
+                if (contenido instanceof Pelicula) {
+
+                    Pelicula pelicula = (Pelicula) contenido;
 
                     for (Actor actor : pelicula.getActores()) {
 
@@ -118,7 +123,9 @@ public class RelacionPeliculaActorArchivo {
 
         for (ContenidoAudiovisual contenido : contenidos) {
 
-            if (contenido instanceof Pelicula pelicula) {
+            if (contenido instanceof Pelicula) {
+
+                Pelicula pelicula = (Pelicula) contenido;
 
                 for (Actor actor : pelicula.getActores()) {
 
@@ -133,4 +140,3 @@ public class RelacionPeliculaActorArchivo {
         return ids;
     }
 }
-

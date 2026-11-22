@@ -29,7 +29,8 @@ public class TemporadaArchivo {
 
         for (ContenidoAudiovisual contenido : contenidos) {
 
-            if (contenido instanceof SerieDeTV serie) {
+            if (contenido instanceof SerieDeTV) {
+                SerieDeTV serie = (SerieDeTV) contenido;
                 series.put(serie.getId(), serie);
             }
         }
@@ -80,14 +81,16 @@ public class TemporadaArchivo {
 
             for (ContenidoAudiovisual contenido : contenidos) {
 
-                if (contenido instanceof SerieDeTV serie) {
+                if (contenido instanceof SerieDeTV) {
+
+                    SerieDeTV serie = (SerieDeTV) contenido;
 
                     for (Temporada temporada : serie.getDetallesTemporadas()) {
 
                         bw.write(
-                            serie.getId() + ","
-                            + temporada.getAnioEstreno() + ","
-                            + temporada.getCantidadEpisodios()
+                                serie.getId() + ","
+                                + temporada.getAnioEstreno() + ","
+                                + temporada.getCantidadEpisodios()
                         );
 
                         bw.newLine();
