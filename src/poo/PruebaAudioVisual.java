@@ -1,6 +1,14 @@
 package poo;
 
-import uni1a.*;
+import modelo.Actor;
+import modelo.ContenidoAudiovisual;
+import modelo.Documental;
+import modelo.Investigador;
+import modelo.Noticiero;
+import modelo.Pelicula;
+import modelo.SerieDeTV;
+import modelo.VideoEducativo;
+//import uni1a.*;
 
 public class PruebaAudioVisual {
 	public static void main(String[] args) {
